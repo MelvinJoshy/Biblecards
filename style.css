@@ -1,0 +1,381 @@
+@import url('https://fonts.googleapis.com/css2?family=Anek+Malayalam:wght@400;500;600&family=Barlow:wght@400;500;600&family=Inter:wght@400;600;700&display=swap');
+
+/*=================VARIBLES=====================================*/
+
+:root{
+
+
+    /*=============COLOURS=========================*/
+
+    --primary-color:rgba(12, 231, 178, 1);
+    --secondary-color:rgba(2, 16, 25, 1);
+    --font-color:rgb(255, 255, 255);
+
+    /*=============FONTS===============================*/
+
+    --malayalam-font:'Anek Malayalam', sans-serif;
+    --body-font:'inter', sans-serif;
+    --footer-font:'Barlow', sans-serif;
+    --body-text:0.938rem;
+    --verse-text:1.5rem;
+    --footer-text:1.125rem;
+    --verse-author:1rem;
+    --body-weight:600;
+    --verse-weight:700;
+    --verse-author-weight:500;
+    --line-height:2.125rem;
+    --header-height:5rem;
+
+}
+
+/*==========================CSS REUSABLES================================================*/
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    background-color: var(--font-color);
+    font-size: var(--body-text);
+    color: var(--secondary-color);
+    font-family: var(--body-font);
+  }
+  
+  ul {
+    list-style: none;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+
+.grid{
+    display: grid;
+    gap: 1.5rem;
+}
+
+.container{
+    max-width: 1024px;
+    margin-right: 1.5rem;
+    margin-left: 1.5rem;
+}
+
+.section{
+    padding: 4.5rem 0 2rem;
+}
+
+.main{
+    overflow: hidden;
+}
+
+
+/*=============================HEADER===============================================*/
+
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background-color: var(--font-color);
+    width: 100%;
+}
+
+.nav{
+    height: var(--header-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+  
+}
+
+.logo-area img{
+    width: 8.75rem;
+}
+
+.nav__close,
+.toggle_switch{
+    display: inline-flex;
+    cursor: pointer;
+}
+
+.nav__close{
+    color: var(--primary-color);
+    font-size: 1.5rem;
+}
+
+.toggle_switch{
+    color: var(--secondary-color);
+    font-size: 1.5rem;
+}
+
+.pop_close{
+    font-size: 1.5rem;
+    
+}
+
+
+/*========================HOME======================================*/
+
+.verse__container{
+    background-image: url(/Assets/verser_default_themes.jpg);
+    margin-top: 2rem;
+    width: 100%;
+    height: auto;
+    border-radius: 1.438rem;
+    padding: 2rem;
+}
+
+.verse_category p{
+    color: var(--font-color);
+    font-family: var(--footer-font);
+    font-size: var(--body-text);
+}
+
+.verse__text{
+    color: var(--font-color);
+    font-size: var(--verse-text);
+    font-family: var(--malayalam-font);
+    line-height: var(--line-height);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    font-weight: var(--verse-weight);
+    
+}
+
+.verse__author{
+    color: var(--font-color);
+    font-family: var(--malayalam-font);
+    font-weight: var(--verse-author-weight);
+}
+
+.gen_btn{
+    border: none;
+    background-color: var(--secondary-color);
+    width: 120px;
+    padding: 1rem;
+    border-radius: 2.75rem;
+    text-align: center;
+}
+
+.gen_btn{
+    color: var(--font-color);
+    font-family: var(--body-font);
+    font-size: var(--body-text);
+    font-weight: var(--body-weight);
+    cursor: pointer;
+    
+
+}
+
+.gen_btn:hover{
+    background-color: rgba(14, 31, 41, 1);
+}
+
+.save_btn{
+    border: 1px solid var(--secondary-color);
+    background-color: var(--font-color);
+    width: 120px;
+    padding: 1rem;
+    border-radius: 2.75rem;
+    text-align: center;
+    cursor: pointer;
+}
+
+.save_btn a{
+    font-family: var(--body-font);
+    font-size: var(--body-text);
+    font-weight: var(--body-weight);
+    color: var(--secondary-color);
+}
+.verse__nav__container{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.footer__container{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+}
+
+.footer__title p{
+    font-family: var(--footer-font);
+    font-weight: var(--body-weight);
+    font-size: var(--body-text);
+}
+
+.feedback p{
+    font-family: var(--footer-font);
+    font-weight: var(--verse-author-weight);
+    font-size: var(--body-text);
+    color: var(--secondary-color);
+}
+
+.overlay{
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.515);
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: none;
+    pointer-events: none;
+    transition: .5s;
+    
+}
+
+.active{
+    opacity: 1;
+    pointer-events: auto;
+    display: block;
+    
+}
+
+.pop__window{
+    background-color: var(--secondary-color);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    border-radius: 1rem;
+    transition: .5s;
+
+
+    
+}
+
+.pop__window h3{
+    color: var(--font-color);
+    font-family: var(--footer-font);
+    font-size: 1.2rem;
+}
+
+.pop__window p{
+    color: var(--font-color);
+    font-family: var(--footer-font);
+    font-size: var(--verse-author);
+    line-height: 24px;
+}
+
+.pop__window img{
+    width: 8rem;
+}
+
+
+.wrapper{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: center;
+    padding-top: 2rem;
+
+    
+}
+
+.theme img{
+    width: 100px;
+    height: 150px;
+    border-radius: 1rem;
+    cursor: pointer;
+}
+    
+.theme:focus{
+    border: 2px solid gray;
+    border-radius: 18px;
+    padding: 2px;
+
+    
+}
+
+.discover__container{
+    margin-top: 2rem;
+}
+
+.discover__container h3{
+    font-family: var(--malayalam-font);
+    font-size: var(--verse-text);
+    text-align: center;
+}
+
+.discover__category{
+    width: 100%;
+    padding: 1rem;
+    border-radius: 15px;
+    margin-top: 1rem;
+    overflow: auto;
+    
+}
+
+.discover__category::-webkit-scrollbar{
+    display: none;
+}
+
+.list__item{
+    display: flex;
+    flex-direction: row;
+    gap: .5rem;
+}
+
+.list__item a{
+    background-color: var(--font-color);
+    padding: .7rem 2rem;
+    border-radius: 2rem;
+    font-family: var(--malayalam-font);
+    font-weight: var(--verse-author-weight);
+    color: var(--secondary-color);
+    cursor: pointer;
+}
+
+
+
+.verse__post{
+    background-image: url(/Assets/verser_default_themes.jpg);
+    margin-top: 2rem;
+    width: 100%;
+    height: auto;
+    border-radius: 1.438rem;
+    padding: 2rem;
+    display: none;
+}
+
+.Active-Tab{
+    display: block;
+}
+
+.verse_post_text{
+    color: var(--font-color);
+    font-size: var(--verse-text);
+    font-family: var(--malayalam-font);
+    line-height: var(--line-height);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    font-weight: var(--verse-weight);
+}
+
+.verse_cat{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.verse_post_author{
+    font-family: var(--malayalam-font);
+    font-weight: var(--verse-author-weight);
+    color: var(--font-color);
+}
+
+.Active-tab{
+    background-color: var(--secondary-color);
+}

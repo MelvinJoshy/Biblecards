@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bible Cards</title>
+
+<!-----------------------CSS--------------------------------->
+
+<link rel="stylesheet" href="/style.css">
+
+
+<!---------------------REMIX-ICON-CDN------------------------------------>
+
+<link
+href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
+rel="stylesheet"/>
+
+
+<meta name="theme-color" content="rgba(12, 231, 178, 1)">
+
+
+<!-----------------------GOOGLE FONTS-------------------------------------->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anek+Malayalam:wght@400;500;600&family=Barlow:wght@400;500;600&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+
+<!--------------------------VERSE-DOWNLOAD-AS-IMAGE------------------------------------->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
+
+
+
+
+</head>
+<body onload="autoClick();">
+
+<header class="header" id="header">
+
+    <div class="nav container" id="nav">
+        <div class="logo-area">
+            <a href="">
+                <img src="/Assets/logo-black.svg" alt="logo">
+            </a>
+        </div>
+
+        <div class="about-section">
+
+            <div class="toggle_switch" id="nav-toggle">
+                <i class="ri-apps-2-line"></i>
+
+                </div>
+    
+                <div class="overlay">
+    
+                    <div class="pop__window" id="pop__window">
+                        <div class="pop_close">
+                            <i class="ri-close-circle-line"></i>
+                        </div>
+                        <h3 id="pop-text">What is it</h3>
+                        <p>Bible Cards is random bible verse generator. You can use this verses in the path of your life. Bible Cards designed and Developed by Melvin Joshy</p>
+    
+                        <h3 id="pop-text">Our Vision</h3>
+                        <p>Bible Cards is random bible verse generator. You can use this verses in the path of your life. Bible Cards designed and Developed by Melvin Joshy</p>
+
+                        <h3 id="pop-text">Special Thanks</h3>
+
+                        <ul class="Spl_thanks">
+                            <li><a href="https://scripture.api.bible/">API Bible</a></li>
+                            <li><a href="https://remixicon.com/">Remix Icons</a></li>
+                            <li><a href="https://html2canvas.hertzen.com/">Html2Canvas</a></li>
+                        </ul>
+
+                        <img src="/Assets/logo-black.svg" alt="">
+    
+                    </div>
+                    
+                </div>
+    
+    
+    
+
+        </div>
+
+       
+        </div>
+
+
+      
+
+
+
+    </div>
+
+</header>
+
+
+<main>
+
+
+    <section class="home section" id="home">
+
+        <div class="home__container container">
+
+            <div class="verse__container" id="verseContent">
+                <div class="verse_category">
+                    <p>Bible Cards</p>
+                </div>
+
+                <div class="verse__content">
+                    <h3 class="verse__text" id="verse__text">
+                        For God so loved the world, that he gave his only Son, that whoever believes in him should not perish but have eternal life. For God did not send his Son into the world to condemn the world, but in order that the world might be saved through him
+                    </h3>
+                </div>
+
+                <div class="verse__author" id="verse__author">
+                    <p>John 3:16-17</p>
+                </div>
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+    <section class="verse__navigation">
+
+        <div class="verse__nav__container container">
+            <button class="gen_btn" id="generate">
+                Generate
+            </button>
+
+            <button class="save_btn">
+                <a id="download" href="#">Save</a>
+            </button>
+
+        </div>
+
+
+
+    </section>
+
+
+
+    <section class="themes_section">
+
+            <div class="wrapper container">
+                <div onclick="changeTheme1()" class="theme" tabindex="1">
+                    <img src="Assets/theme-5.jpg" alt="">
+                </div>
+
+                <div onclick="changeTheme2()" class="theme" tabindex="1">
+                    <img src="Assets/theme-2.jpg" alt="">
+                </div>
+
+
+                <div onclick="changeTheme3()" class="theme" tabindex="1">
+                    <img src="Assets/theme-4.jpg" alt="">
+                </div>
+
+            
+            </div>
+
+        </div>
+
+    </section>
+
+
+   <!-- <section class="discover__section">
+
+        <div class="discover__container container">
+
+            <h3>Discover</h3>
+
+            <div class="discover__category">
+                <ul class="list__item">
+                    <li><a class="Tab">All</a></li>
+                    <li><a class="Tab">Prayer</a></li>
+                    <li><a class="faith">Faith</a></li>
+                    <li><a class="Tab">Love</a></li>
+                    <li><a class="Tab">Honesty</a></li>
+                </ul>
+            </div>
+
+
+        </div>
+
+
+        <div class="verses__posts container">
+
+            <div class="verse__post">
+                <div class="verse_category">
+                    <div class="verse_cat">
+                        <p>Bible Cards</p>
+                        <p>|</p>
+                        <p>Prayer</p>
+                    </div>
+                    
+                </div>
+                <h3 class="verse_post_text">
+                    Therefore welcome one another as Christ has welcomed you, for the glory of God
+                </h3>
+                <p class="verse_post_author">
+                    Romans 15:7
+                </p>
+            </div>
+
+            <div class="verse__post">
+                <div class="verse_category">
+                    <div class="verse_cat">
+                        <p>Bible Cards</p>
+                        <p>|</p>
+                        <p>Faith</p>
+                    </div>
+                    
+                </div>
+                <h3 class="verse_post_text">
+                    Therefore welcome one another as Christ has welcomed you, for the glory of God
+                </h3>
+                <p class="verse_post_author">
+                    Romans 15:7
+                </p>
+            </div>
+
+
+
+
+        </div>
+
+
+
+    </section>
+-->
+    
+
+
+    <footer class="footer section">
+
+        <div class="footer__container container">
+
+            <div class="footer__title">
+                <p>Designed With ❤️</p>
+            </div>
+
+            <div class="creator_logo">
+                <a href="">
+                    <img src="/Assets/melvin_designs.svg" alt="">
+                </a>
+            </div>
+
+            <div class="feedback">
+
+                <a href="mailto:melvinpallipadan2003@gmail.com">
+                    <p>
+                        Send Feedback
+                        <i class="ri-arrow-right-up-line"></i>
+                    </p>
+                </a>
+                
+            </div>
+
+        </div>
+
+
+
+    </footer>
+
+
+
+</main>
+
+
+    
+</body>
+
+<script type="text/javascript" src="/main.js"></script>
+
+
+</html>
